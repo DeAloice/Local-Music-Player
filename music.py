@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter as ctk
 import os
 import pygame
+import random
 
 home_dir = os.path.expanduser("~")
 music_folder = os.path.join(home_dir, "Downloads/Music1")
@@ -14,6 +15,7 @@ pygame.mixer.init()
 
 if os.path.exists(music_folder):
     playlist = [f for f in os.listdir(music_folder) if f.endswith(".mp3") ]
+    random.shuffle(playlist)
 else:
     print(f"Error: The folder '{music_folder}' does not exist!")
 
